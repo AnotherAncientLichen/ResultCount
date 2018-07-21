@@ -123,7 +123,6 @@ public class CxProxy {
 		ScanTotals scanTotals = new ScanTotals();
 		if (resp.isIsSuccesfull()) {
 			for (CxWSSingleResultData result: resp.getResults().getCxWSSingleResultData()) {
-				System.out.println("ScanId: " + scanId + " resultState: " + result.getState() );
 				scanTotals.addState(result.getState());
 			}
 		}

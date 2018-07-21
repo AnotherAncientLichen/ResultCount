@@ -46,14 +46,12 @@ public class ReporterMain {
 	public void run(String[] args) {
 		List<ReportRecord> recs = new ArrayList<>();
 		ReportConfig config = getConfiguration(args);
-		System.out.println(config.toString());
 		CxProxy proxy = new CxProxy(config);
 		Map<String,String> groupMap = proxy.getGroupMap();
 		logger.debug("GroupMap loaded with {} items", groupMap.keySet().size());
 		for (Project p: proxy.getProjectList()) {
 			logger.debug("------------{}-----------",p.getName());
 			ScanTotals st = proxy.getScanTotals(p.getLastScanId());
-			System.out.println(p.getLastScanId() + " " + st.toString());
 			String teamName = getLastItem(groupMap.get(p.getOwningTeamId()),"\\\\");
 			ReportRecord rec = new ReportRecord(
 					p.getId(),p.getName(),p.getLastScanId(),p.getOwningTeamId(), groupMap.get(p.getOwningTeamId()),
