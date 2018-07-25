@@ -25,10 +25,6 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
-//import com.checkmarx.cxresultreporter.dto.Project;
-//import com.checkmarx.cxresultreporter.dto.ScanQuery;
-//import com.checkmarx.cxresultreporter.ws.CxProxy;
-
 public class ReporterMain {
 	final static Logger logger = LoggerFactory.getLogger(ReporterMain.class);
 	
